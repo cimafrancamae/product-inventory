@@ -1,7 +1,9 @@
-<div class="container mx-auto mt-8">
-  <header class="mb-4">
-    <h1 class="text-3xl font-semibold">New Product</h1>
-    <%= link_to "Back", products_path, class: "text-blue-500 hover:underline ml-4" %>
+<div class="container mx-auto ">
+  <header class="container fixed top-0 left-0 right-0 bg-blue-500 text-white py-4 px-4 z-10">
+    <div class="flex items-center justify-between">
+      <h1 class="text-3xl font-semibold">New Product</h1>
+      <%= link_to "Back", products_path, class: " hover:underline ml-4" %>
+    </div>
   </header>
 
   <%= render "form" %>
