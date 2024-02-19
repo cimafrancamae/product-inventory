@@ -9,7 +9,5 @@
     </div>
   </header>
 
-  <div class="container">
-    <%= render "form" %>
-  </div>
+  <%= render partial: "form", locals: { product: @product } %>
 </div>
