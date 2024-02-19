@@ -3,7 +3,7 @@
     <%= link_to "Back", products_path, class: "hover:underline" %>
     <div class="flex items-center">
       <%= link_to "Edit", edit_product_path(@product), class: "bg-white text-blue-500 py-2 px-4 rounded hover:bg-blue-700 hover:text-white mr-4" %>
-      <%= button_to "Delete", @product, method: :delete, data: { confirm: "Are you sure you want to delete this product?" }, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" %>
+      <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure you want to delete this product?" }, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700" %>
     </div>
   </div>
 
