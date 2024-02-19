@@ -8,7 +8,15 @@
   </div>
 
   <div class="mb-4">
-    <%= form.label :content, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.label :image, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.file_field :image, accept: 'image/*', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <% if form.object.errors[:image].any? %>
+      <p class="text-red-500 text-xs italic mt-1"><%= form.object.errors[:image].first %></p>
+    <% end %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label "Description", class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.rich_text_area :content %>
     <% if form.object.errors[:content].any? %>
       <p class="text-red-500 text-xs italic mt-1"><%= form.object.errors[:content].first %></p>
@@ -24,18 +32,10 @@
   </div>
 
   <div class="mb-4">
-    <%= form.label :qty, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.label "Quantity", class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.number_field :qty, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     <% if form.object.errors[:qty].any? %>
       <p class="text-red-500 text-xs italic mt-1"><%= form.object.errors[:qty].first %></p>
-    <% end %>
-  </div>
-
-  <div class="mb-4">
-    <%= form.label :image, class: "block text-gray-700 text-sm font-bold mb-2" %>
-    <%= form.file_field :image, accept: 'image/*', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-    <% if form.object.errors[:image].any? %>
-      <p class="text-red-500 text-xs italic mt-1"><%= form.object.errors[:image].first %></p>
     <% end %>
   </div>
 
