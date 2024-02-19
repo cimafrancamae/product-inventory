@@ -1,0 +1,22 @@
+<div class="container mx-auto">
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="text-3xl font-semibold text-blue-500 mb-2"><%= @product.name %></h1>
+    <%= link_to "Back", products_path, class: "text-blue-500 hover:underline" %>
+  </div>
+
+  <div class="flex items-center">
+    <% if @product.image.attached? %>
+      <%= image_tag @product.image, class: "object-cover rounded-full mr-4" %>
+    <% else %>
+      <div class="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+        Image Not Available
+      </div>
+    <% end %>
+
+    <div>
+      <p class="text-gray-700">Price: $<%= @product.price %></p>
+      <p class="text-gray-700">Quantity: <%= @product.qty %></p>
+      <p class="text-gray-600 mb-2">Description: <%= @product.desc %></p>
+    </div>
+  </div>
+</div>
