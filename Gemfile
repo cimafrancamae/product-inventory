@@ -41,6 +41,11 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem "tailwindcss-rails", "~> 2.3"
+
+gem 'font-awesome-sass', '~> 5.0'
+
+
 # Gemfile
 # gem 'trix'
 # gem 'simple_form'
@@ -75,5 +80,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem "tailwindcss-rails", "~> 2.3"

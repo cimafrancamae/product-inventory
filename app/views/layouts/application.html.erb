@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ProductInventory</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
+<html lang="en">
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+<head>
+  <title>ProductInventory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "actiontext", "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css", "data-turbo-track": "reload" %>
+</head>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body class="bg-gray-100 font-sans">
+  <header class="flex justify-between items-center p-4 top-0 bg-white shadow-md">
+    <div>
+      <%= link_to root_path do %>
+        <img src="../../assets/logo.png" alt="Logo Image" class="w-16 h-16 mx-auto">
+      <% end %>
+      
+    </div>
+    <div >
+      <%= link_to products_path do %>
+        ☰
+      <% end %>
+    </div>
+  </header>
 
-<body class="px-4">
-    <main class="container mx-auto mt-28 flex-grow">
-      <%= yield %>
-    </main>
+  <main class="container mx-auto flex-grow">
+    <%= yield %>
+  </main>
 
-   <footer class="py-4 px-4 mt-28 text-center text-gray-500 bg-white shadow-md">
-    <div class="flex justify-center	">
+  <footer class="py-4 px-4 text-center text-gray-500 border-t border-gray-300">
+    <div class="flex justify-center">
       <p class="mb-0">&copy; 2024 maeci. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
-
-
 
 </html>

@@ -1,0 +1,36 @@
+<!-- Hero Image -->
+<div class="hero-image relative">
+  <img src="assets/hero.jpg" alt="Hero Image" class="w-full h-64 object-cover">
+  <!-- Hero content -->
+  <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-white text-center">
+    <h1 class="text-4xl font-semibold">Welcome to Our Shop</h1>
+  </div>
+</div>
+
+<!-- Headline -->
+<div class="mt-8 mx-auto text-center py-4">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-2">Featured Products</h2>
+  <p class="text-gray-600">Explore our handpicked selection of quality products.</p>
+</div>
+
+<!-- Product Section -->
+<div class="mt-8 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-4">
+  <% @products.each do |product| %>
+    <!-- Product Card -->
+    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md px-4 py-4">
+      <!-- Product Image -->
+      <% if product.image.attached? %>
+        <%= image_tag product.image, alt: product.name, class: "w-full h-40 object-cover mb-4" %>
+      <% else %>
+        <div class="w-full h-40 bg-gray-300 mb-4"></div>
+      <% end %>
+      <!-- Product Details -->
+      <h2 class="text-lg font-semibold text-gray-800 mb-2"><%= link_to product.name, product %></h2>
+      <!-- Convert rich text to plain text and then truncate -->
+      <% plain_text_description = strip_tags(product.content.body.to_plain_text) %>
+      <p class="text-gray-600 mb-2"><%= truncate(plain_text_description, length: 80) %></p>
+      <p class="text-slate-900 font-bold">$<%= product.price %></p>
+      <!-- Add to Cart button or other actions -->
+    </div>
+  <% end %>
+</div>

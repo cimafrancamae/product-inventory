@@ -1,5 +1,5 @@
 <%= form_with model: product do |form| %>
-  <div class="mb-4">
+  <div class="mb-4 px-20">
     <%= form.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.text_field :name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     <% if form.object.errors[:name].any? %>
@@ -7,7 +7,7 @@
     <% end %>
   </div>
 
-  <div class="mb-4">
+  <div class="mb-4 px-20">
     <%= form.label :image, class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.file_field :image, accept: 'image/*', class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     <% if form.object.errors[:image].any? %>
@@ -15,7 +15,7 @@
     <% end %>
   </div>
 
-  <div class="mb-4">
+  <div class="mb-4 px-20">
     <%= form.label "Description", class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.rich_text_area :content %>
     <% if form.object.errors[:content].any? %>
@@ -23,15 +23,13 @@
     <% end %>
   </div>
 
-  <div class="mb-4">
+  <div class="mb-4 px-20 flex gap-4">
     <%= form.label :price, class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.number_field :price, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     <% if form.object.errors[:price].any? %>
       <p class="text-red-500 text-xs italic mt-1"><%= form.object.errors[:price].first %></p>
     <% end %>
-  </div>
-
-  <div class="mb-4">
+  
     <%= form.label "Quantity", class: "block text-gray-700 text-sm font-bold mb-2" %>
     <%= form.number_field :qty, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     <% if form.object.errors[:qty].any? %>
@@ -39,7 +37,7 @@
     <% end %>
   </div>
 
-  <div class="mb-4">
-    <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  <div class="mb-4 px-20">
+    <%= form.submit class: "bg-slate-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
   </div>
 <% end %>
