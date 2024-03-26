@@ -14,6 +14,14 @@
  *= require_self
  */
 
+ html {
+    min-height: 100%;
+ }
+
+ body {
+    flex-grow: 1;
+ }
+
 .hero-container {
     width: 260px; /* Adjust the width as needed */
     height: 260px; /* Adjust the height as needed */

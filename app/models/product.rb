@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
+  has_many :order_products
+  has_many :orders, through: :order_products
+
   validates :name, presence: true
-  validates :content, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0}
-  validates :qty, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :image, presence: true
 
   has_one_attached :image do |attachable|
     attachable.variant :thumb, resize_to_limit: [100, 100]
